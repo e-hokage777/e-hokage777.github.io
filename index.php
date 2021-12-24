@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="appctrl">
+	<head>
+		<title>ME</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!--Adding style sheets here -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+
+	<body data-spy="scroll" data-target=".navbar">
+
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top p-3">
+			<a class="navbar-brand text-uppercase" href="#">Eli</a>
+			<button type="button" class="navbar-toggler" data-target="#navlinks" data-toggle="collapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Navlinks -->
+			<div class="collapse navbar-collapse" id="navlinks">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#portfolio">PORTFOLIO</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">ABOUT</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">CONTACT</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+					<!-- PROFILE PIC SECTION -->
+			<section class="row" id="picture-section">
+				<div class="col-lg-12 text-center">
+					<img class="rounded-circle" src="assets/images/p-pic.jpg" width="300px" height="300px">
+				</div>
+				<div class="col-lg-12">
+					<h1 class="text-center">I'M ELI, A PROGRAMMER</h1>
+				</div>
+			</section>
+
+			<!-- Portfolio -->
+			<section id="portfolio" class="row">
+				<div class="col-sm-12">
+					<h1 class="text-center mb-5 display-4">PORTFOLIO</h1>
+				</div>
+				<!-- Certificate button -->
+				<div class="col-md-6 mb-3">
+					<a href="#certs" data-toggle="modal" style="display:block" class="p-5 border text-center w-75  mx-auto text-white bg-primary rounded">
+						<i class="display-3 fas fa-certificate"></i>
+						<div class="col-sm-12 text-center display-4"><h4>Certificates</h4></div>
+					</a>
+				</div>
+				<div class="col-md-6 mb-3">
+					<a href="#projects" data-toggle="modal" style="display:block" class="p-5 border text-center w-75 mx-auto text-white bg-primary">
+						<i class="display-3 fas fa-project-diagram"></i>
+						<div class="col-sm-12 text-center"><h4>Projects</h4></div>
+					</a>
+				</div>
+			</section>
+
+			<section id="about" class="row">
+				<div class="col-sm-12">
+					<h1 class="text-center mb-5 display-4">ABOUT</h1>
+				</div>
+					<div class="col-md-6 text-center">
+						<h3>EDUCATION</h3>
+						<p>
+							A proud student of Kwame Nkrumah University of Science and Technology, Kumasi, Ghana.<br>
+							Currently in the 2024 year group of Computer Engineers.
+						</p>
+					</div>
+					<div class="col-md-6">
+						<h3 class="text-center">SKILLS</h3>
+						<p>
+							I am proficient in object-oriented programming languages such as:
+							<ul>
+								<li>Python</li>
+								<li>Java</li>
+								<li>PHP</li>
+								<li>Javascript</li>
+							</ul>
+						</p>
+					</div>
+			</section>
+
+			<section id="contact" class="p-5 row">
+				<div class="container">
+					<h2 class="display-4 text-center">CONTACT</h2>
+				<form action="" method="post" class="p-5 bg-info mt-4" name="message">
+					<div id="alert-message"></div>
+					<div class="form-group">
+						<label for="fname">First Name:</label>
+						<input type="text" class="form-control" placeholder="Enter first name" id="fname">
+					</div>
+					<div class="form-group">
+						<label for="lname">Last Name:</label>
+						<input type="text" class="form-control" placeholder="Enter last name" id="lname">
+					</div>
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input type="email" class="form-control" placeholder="Enter email" id="email">
+					</div>
+					<div class="form-group">
+						<label for="message">Message:</label>
+						<textarea class="form-control" id="message" rows="7" placeholder="How can we help you?"></textarea>
+					</div>
+					<button type="submit" class="btn btn-dark"><h5>Send</h5></button>
+					<button type="reset" class="btn btn-danger"><h5>Reset</h5></button>
+				</form>
+			</div>
+			</section>
+
+		</div>
+
+		<!-- MODALS FOR PORTFOLIO SECTION -->
+		<div class="modal fade" id="certs">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title text-uppercase">Certificates</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="text-uppercase p-3" ng-repeat="x in certs"><i class="text-success fas fa-star"></i> {{x}}</div>
+				</div>
+
+				<div class="modal-footer">
+					<a class="ml-auto" href="https://www.linkedin.com/in/eli-bansa-92475b207/" target="_blank">View Certificates on my LinkedIn profile</a>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="projects">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title text-uppercase">Projects</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="text-uppercase p-3" ng-repeat="x in projects"><i class="fas fa-wrench"></i> <a ng-href="{{x.link}}" target="_blank">{{x.name}}</a></div>
+				</div>
+
+				<div class="modal-footer">
+					<a class="ml-auto" href="https://codepen.io/your-work?cursor=ZD0wJm89MSZwPTEmdj01NjM0NzQ3Ng==" target="_blank">View all projects on CodePen</a>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<!--footer--->
+		<footer class="bg-dark text-white p-5">
+			<div class="row">
+				<div class="col-md-4 text-center mb-sm-5">
+					<h3>LOCATION</h3>
+					<p>You can find me</p>
+				</div>
+				<div class="col-md-4 text-center display-4 mb-sm-5">
+					<ul class="list-inline">
+						<li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-github"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 ">
+					<h3 class="text-center">CONTACT INFO</h3>
+					<ul class="text-sm-center list-unstyled">
+						<li>Email: <a href="mailto:e.hokage777@gmail.com">e.hokage777@gmail.com</a></li>
+						<li>Phone: 0246879018 | 0202413095
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+		<!--Adding scripts here -->
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="assets/AngularJs/angular.min.js"></script>
+		<script src="js/angular/App.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

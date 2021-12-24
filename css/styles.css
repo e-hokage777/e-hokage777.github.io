@@ -1,0 +1,43 @@
+body{
+	position: relative;
+}
+
+
+#picture-section {
+	padding: 100px 20px 100px 20px;
+	background-color: #358f8f;
+}
+
+#portfolio {
+	padding: 60px 20px 100px 20px;
+	background-color: #0ab2cc;
+}
+
+#about {
+	padding: 60px 20px 100px 20px;
+	background-color: #374cb8;
+}
+
+#contact {
+	background-color: #8357ad;
+}
+
+#about div:nth-child(3){
+	border-left: solid 2px;
+}
+
+.display-4 {
+	color: white;
+}
+
+/*Removing outline from button elements*/
+button {
+	outline: none !important;
+}
+
+@media (max-width: 767px){
+	#about div:nth-child(3){
+		border-left: none;
+		border-top: 2px solid;
+	}
+}
