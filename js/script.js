@@ -65,7 +65,7 @@ $(document).ready(function(){
 			},
 
 			beforeSend: function(){
-				alert.html("<span class='spinner-grow spinner-grow-sm text-info'></span> Loading...")
+				alert.html("<span class='spinner-grow spinner-grow-sm text-warning'></span> Loading...")
 			}
 
 		});
