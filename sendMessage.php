@@ -4,10 +4,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-$fname = trim($_GET["fname"]);
-$lname = trim($_GET["lname"]);
-$email = trim($_GET["email"]);
-$message = trim($_GET["message"]);
+$fname = trim($_POST["fname"]);
+$lname = trim($_POST["lname"]);
+$email = trim($_POST["email"]);
+$message = trim($_POST["message"]);
 
 if($fname == "")
 	echo "fname_null";
