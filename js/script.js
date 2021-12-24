@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 		alert = $("#alert-message");
 		$.ajax({
-			type: "POST",
+			type: "GET",
 			url: "sendMessage.php",
 			data: "fname="+fname+"&lname="+lname+"&email="+email+"&message="+message,
 			success: function(response){
