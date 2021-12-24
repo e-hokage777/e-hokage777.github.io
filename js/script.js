@@ -59,7 +59,9 @@ $(document).ready(function(){
 			},
 
 			error: function(xhr, status, error){
-				console.log(error);
+				console.log(status);
+				alert.html("<div class='alert alert-danger'>Error, please check connection or use the email address below to send message</div>");
+
 			},
 
 			beforeSend: function(){
