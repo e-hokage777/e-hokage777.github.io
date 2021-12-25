@@ -31,8 +31,9 @@ body{
 }
 
 /*Removing outline from button elements*/
-button {
-	outline: none !important;
+button, button:focus {
+	outline: none!important;
+	box-shadow: none !important;
 }
 
 @media (max-width: 767px){
