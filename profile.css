@@ -1,0 +1,409 @@
+/** importing necessary styles **/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+/** global variables **/
+:root {
+  --bubble-float-time: 10s;
+  --main-font-family: "Roboto", sans-serif;
+  --bg-linear-gradient: linear-gradient(to bottom, #4f8f9f, 20%, #d9e4e6);
+  --primary-font-color: black;
+  --primary-button-color: rgb(41, 185, 221);
+  --button-hover-color: rgb(145, 210, 226);
+  --card-title-color: #157D81;
+  --secondary-link-color: rgb(255, 245, 103);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: var(--main-font-family);
+  background-image: var(--bg-linear-gradient);
+  background-attachment: fixed;
+  color: var(--primary-font-color);
+}
+
+/** necessary overrides **/
+.row {
+  margin: 0;
+}
+
+/** setting waves up **/
+.wave1,
+.wave2 {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wave1,
+.wave2 {
+  background-image: url("assets/images/wave_w.png");
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: 1000px 120px;
+  z-index: 2;
+}
+
+.wave1 {
+  animation: wave1 15s linear infinite;
+  opacity: 0.51;
+}
+
+.wave2 {
+  animation: wave2 10s linear infinite;
+}
+
+@keyframes wave2 {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -1000px;
+  }
+}
+@keyframes wave1 {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 1000px;
+  }
+}
+
+/** bubble styles **/
+.bubble-float {
+  animation: float var(--bubble-float-time) ease-in-out;
+}
+
+@keyframes float {
+  to {
+    bottom: 110%;
+  }
+}
+
+/** styles for main container **/
+main {
+  position: relative;
+  z-index: 10;
+}
+
+/** cards up **/
+.card-holder {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c_card {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(0.5rem);
+  box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/** styling for individual sections **/
+
+/** styling for intro section **/
+#intro .c_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+#intro .c_card .profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#intro .c_card .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/** styling for contents sections **/
+#content-menu .c_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-menu .content-list {
+  padding: 0;
+  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: 3px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 60%;
+}
+
+#content-menu .content-list li a {
+  text-decoration: none;
+  color: var(--primary-font-color);
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#content-menu .content-list li {
+  background-color: var(--primary-button-color);
+  border-radius: 500px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+#content-menu .content-list li:hover{
+    background-color: var(--button-hover-color);
+    transform: translateY(0.5rem);
+    box-shadow: none;
+}
+
+/** styles for all other cards **/
+.c_card .card-title{
+  color: var(--card-title-color);
+  padding-top: 4rem;
+}
+
+.c_card .card-content{
+  padding: 0rem 2rem;
+  margin: 2rem;
+  border-radius: 20px;
+  border: solid 2px var(--card-title-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  flex: 1;
+}
+
+/** styles for skills section **/
+#skills .c_card .card-content{
+  display: block;
+}
+
+#skills .skill-set{
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+#skills .skill-set .skill-set-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+#skills .skill-set .skill-set-title i{
+  font-size: 4rem;
+  color: var(--card-title-color);
+}
+
+/** styles for certificates section **/
+#certificates .c_card .card-content{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  padding-bottom: 5rem;
+}
+
+
+#certificates .all-certs-link{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background-color: var(--card-title-color);
+  text-align: center;
+  padding: 1rem 0rem;
+}
+
+#certificates .all-certs-link a{
+  color: var(--secondary-link-color);
+}
+
+/** styling for projects section **/
+#projects .project-card{
+  padding: 2rem;
+  cursor: pointer;
+}
+#projects .project-card-inner{
+  /* width: 200px; */
+  height: 200px;
+  background-color:var(--card-title-color);
+  color: white;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#projects .project-card-inner .project-image{
+  height: 70%;
+}
+
+#projects .project-card-inner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#projects .project-card-inner .project-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+}
+
+#projects .project-card-inner .project-more-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.5s;
+  text-align: center;
+  pointer-events: none;
+}
+
+#projects .project-card-inner:hover .project-more-info{
+  opacity: 1;
+  pointer-events: all;
+}
+
+#projects .project-card.expand{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects .project-card.expand .project-card-inner{
+  width: 70%;
+  height: 70%;
+}
+
+/** styles for contact section **/
+#contact .contact-button-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#contact .card-content .row{
+  justify-content: space-evenly;
+  min-width: 70%;
+}
+
+#contact .contact-button-container .contact-button{
+  border: none;
+  background-color: white;
+  color: var(--card-title-color);
+  font-size: 2.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  transition: all 0.5s;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#contact .contact-button-container .contact-button:hover{
+  background-color: var(--card-title-color);
+  color: white;
+}
+
+#contact .contact-button::before, #contact .contact-button::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: solid 1px var(--card-title-color);
+  opacity: 0;
+  transform: scale(0.6);
+  z-index: -1;
+}
+
+#contact .contact-button:hover::before, #contact .contact-button:hover::after{
+  animation: pulse 2s infinite linear;
+}
+
+
+#contact .contact-button:hover::after{
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse{
+  0%{
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50%{
+    opacity: 1;
+    transform: scale(1);
+  }
+  100%{
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+/** media queries **/
+@media (max-width: 576px){
+    .card-holder{
+        padding: 1rem;
+    }
+}
