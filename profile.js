@@ -2,7 +2,7 @@
 class App {
   constructor() {
     // SELECTORS
-    this.buttonHoverAudio = document.getElementById("button-hover-audio");
+    this.buttonClickAudio = document.getElementById("button-hover-audio");
     this.contentMenuItems = document.querySelectorAll(
       "#content-menu .content-menu-item"
     );
@@ -16,7 +16,7 @@ class App {
     this.primaryGain = this.audioCtx.createGain();
     this.buttonHoverSoundGain = this.audioCtx.createGain();
     this.buttonHoverSoundSource = this.audioCtx.createMediaElementSource(
-      this.buttonHoverAudio
+      this.buttonClickAudio
     );
 
     // making connections
@@ -33,7 +33,7 @@ class App {
     // EVENT LISTENRERS
     this.contentMenuItems.forEach((contentMenuItem, index) => {
       contentMenuItem.addEventListener("mouseover", (event) => {
-        this.playButtonHoverSound();
+        this.playButtonClickSound();
       });
     });
 
@@ -52,7 +52,7 @@ class App {
     this.spawnBubbles();
 
     // increasing playback speed of audio element to take care of speakers making glitchy sounds
-    this.buttonHoverAudio.playbackRate = 7;
+    this.buttonClickAudio.playbackRate = 7;
 
 
   }
@@ -65,10 +65,10 @@ class App {
   }
 
   // function to play button hover sound
-  playButtonHoverSound() {
+  playButtonClickSound() {
     this.audioCtx.resume();
-    this.buttonHoverAudio.currentTime = 0;
-    this.buttonHoverAudio.play().catch((error) => {return});
+    this.buttonClickAudio.currentTime = 0;
+    this.buttonClickAudio.play().catch((error) => {return});
   }
 
   // function to expand project card
