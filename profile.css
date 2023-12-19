@@ -255,11 +255,11 @@ main {
 }
 
 /** styling for projects section **/
-#projects .project-card{
+.project-card{
   padding: 2rem;
   cursor: pointer;
 }
-#projects .project-card-inner{
+.project-card-inner{
   /* width: 200px; */
   height: 200px;
   background-color:var(--card-title-color);
@@ -269,24 +269,24 @@ main {
   overflow: hidden;
 }
 
-#projects .project-card-inner .project-image{
+.project-card-inner .project-image{
   height: 70%;
 }
 
-#projects .project-card-inner img{
+.project-card-inner img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-#projects .project-card-inner .project-title{
+.project-card-inner .project-title{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30%;
 }
 
-#projects .project-card-inner .project-more-info{
+.project-card-inner .project-more-info{
   position: absolute;
   top: 0;
   left: 0;
@@ -305,7 +305,7 @@ main {
   pointer-events: none;
 }
 
-#projects .project-card-inner:hover .project-more-info{
+.project-card-inner:hover .project-more-info{
   opacity: 1;
   pointer-events: all;
 }
@@ -323,7 +323,7 @@ main {
   align-items: center;
 }
 
-#projects .project-card.expand .project-card-inner{
+.project-card.expand .project-card-inner{
   width: 70%;
   height: 70%;
 }
